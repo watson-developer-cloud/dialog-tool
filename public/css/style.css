@@ -1,0 +1,188 @@
+.img-container img {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.errorMsg {
+    font-weight: bold;
+    color: red;
+    white-space: pre-wrap;
+}
+
+.header-text {
+    color: #FF7832;
+    font-weight: 500;
+    margin-top: 2rem;
+    padding-left: 15px;
+}
+
+.loading {
+    margin-top: -2rem;
+    z-index: 100;
+}
+
+.mar10r {
+    margin-left: 10px;
+}
+
+.watson-loading-gif {
+    width: 50px;
+}
+
+.dialog-name-span {
+    font-weight: bold;
+}
+
+.conversation-div {
+    margin-bottom: 20px;
+}
+
+.chat-human {
+    text-align: right;
+}
+
+.chat-watson {
+    text-align: left;
+}
+
+#name {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    padding-left: 0px;
+}
+
+#file {
+    border: 0px;
+}
+
+.new-dialog-container {
+    border: 1px solid #e6e7e8;
+    cursor: pointer;
+    padding: 1.2rem;
+    margin-top: 2rem;
+}
+
+.new-dialog-container-loading {
+    margin-top: 10rem;
+    margin-bottom: 11.1rem;
+}
+
+.new-dialog-container:hover {
+    border: 1px solid #00B2EF;
+}
+
+.dialog-flow-title:hover {
+    color: #00B2EF;
+}
+
+.selected {
+    border: 1px solid #00B2EF;
+}
+
+.new-dialog-input-container {
+    margin: 6.75rem 0;
+}
+
+.create-btn:hover {
+    color: #00B2EF;
+    background-color: #fff;
+    border: 1px solid #00B2EF;
+}
+
+.dialog-flow-title {
+    text-align: center;
+    margin: 13rem 0;
+    line-height: 0px;
+    font-size: 41px;
+}
+
+.exist-dialog-flow-title {
+    text-align: center;
+    margin: 13rem 0 11.2rem;
+    line-height: 0px;
+}
+
+.new-dialog-flow-content {
+    display: none;
+}
+
+.dialog-links {
+    float: right;
+}
+
+.dialogs-loading {
+    margin-top: 11rem;
+}
+
+.dialogs-error {
+    margin-top: 11rem;
+}
+
+.chat-watson {
+    border: 1px solid #e6e7e8;
+    padding: 0.5rem;
+    width: 90%;
+    float: left;
+    background-color: #f4f4f4;
+}
+
+.chat-human {
+    border: 1px solid #e6e7e8;
+    padding: 0.5rem;
+    width: 90%;
+    float: right;
+    background-color: #f4f4f4;
+}
+
+.conversation-well {
+    min-height: 150px;
+}
+
+.no-padding-right {
+    padding-right: 0!important;
+}
+
+.no-padding-left {
+    padding-left: 0!important;
+}
+
+#response-input {
+    border: 2px solid #e6e7e8;
+    height: 34px;
+}
+
+#send-btn {
+    border: 2px solid #e6e7e8;
+    border-left: 0px;
+}
+
+.conversation-flow-container {
+    border: 1px solid #e6e7e8;
+    background-color: #fff;
+    padding: 1rem 0;
+}
+
+.conversation-div {
+    background-color: #5a5a5a;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 3rem!important;
+}
+
+.information-container {
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.profile-container {
+    color: #e0e0e0;
+}
+
+.green-title {
+    color: #00b4a0;
+}
