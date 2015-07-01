@@ -44,6 +44,8 @@ $(document).ready(function() {
 
     $.get(context + '/v1/dialogs')
     .done(function(data) {
+      if (data === '')
+        return;
       dialogs = data.dialogs;
       dialogs.forEach(function(dialog, index) {
         createDialogTemplate(dialog, index).appendTo($dialogs);
@@ -144,11 +146,26 @@ $(document).ready(function() {
     if (!confirm('Are you sure you wish to delete dialog flow: ' + dialog.name)) {
       return;
     }
+    var $dLoading = $('[data-index='+dialogIndex+']').find('.dialog-loading');
+    var $dName = $('[data-index='+dialogIndex+']').find('.dialog-info');
+    $dLoading.show();
+    $dName.hide();
     $.ajax({
       type: 'DELETE',
       url: context + '/v1/dialogs/'+ dialog.dialog_id,
       dataType: 'html'
-    }).done(getDialogs());
+    })
+    .done(function(){
+      setTimeout(getDialogs, 2000);
+    })
+    .fail(function(){
+      $dialogsError.show();
+      $dialogsError.find('.errorMsg').html('Error deleting the dialogs.');
+      $dName.show();
+    })
+    .always(function(){
+      $dLoading.hide();
+    });
   };
 
   var getProfile = function() {
@@ -172,6 +189,9 @@ $(document).ready(function() {
   };
 
   var createDialog = function() {
+    if ($('#name').val() === '' || $('#file').val() === '')
+      return;
+
     $('#new-dialog').hide();
     $('#new-dialog-loading').show();
 
@@ -183,15 +203,20 @@ $(document).ready(function() {
       processData: false,
       contentType: false
     }).done(function(){
-      $('#new-dialog').show();
-      $('#new-dialog-loading').hide();
-
       $('.dialog-flow-title').show();
       $('.new-dialog-flow-content').hide();
       $('#new-dialog').removeClass('selected');
       $('#name').val('');
       $('#file').replaceWith($('#file').val('').clone(true));
       getDialogs();
+    })
+    .fail(function(){
+      $dialogsError.show();
+      $dialogsError.find('.errorMsg').html('Error creating the dialogs.');
+    })
+    .always(function(){
+      $('#new-dialog-loading').hide();
+      $('#new-dialog').show();
     });
   };
 
@@ -279,5 +304,6 @@ $(document).ready(function() {
       $(self).hide();
     });
   });
+
 
 });

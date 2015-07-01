@@ -15,10 +15,10 @@ block row-content
                 div.col-lg-12.col-md-12.col-xs-12.new-dialog-input-container
                     .form-group
                       .col-lg-12
-                        input#name.form-control(type='text', placeholder='Name', name='name')
+                        input#name.form-control(type='text', placeholder='Name', name='name',required)
                     .form-group
                       .col-lg-12
-                        input#file.form-control(type='file', name='file')
+                        input#file.form-control(type='file', name='file',required)
                 div.col-lg-12.col-md-12.col-xs-12.text-right
                   button.create-btn.btn-default.btn Upload
           div#new-dialog-loading.dialog-loading.new-dialog-container(style='display:none')
@@ -52,7 +52,7 @@ block row-content
   div(style='display:none')
     div.dialog-template
       div.col-lg-4.col-md-6.col-xs-12
-        div.new-dialog-container.clearfix
+        div.new-dialog-container.clearfix.dialog-info
           h3.dialog-name-span.exist-dialog-flow-title
           div.dialog-links(style='visibility:hidden;')
             a.edit(href="javascript:;") edit
