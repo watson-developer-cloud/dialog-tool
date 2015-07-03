@@ -30,7 +30,7 @@ var credentials =  extend({
   url: '<url>',
   username: '<username>',
   password: '<password>'
-}, bluemix.getServiceCreds('dialog')); // VCAP_SERVICES
+}, bluemix.getServiceCreds('watson_dialog_service')); // VCAP_SERVICES
 
 if (credentials.url.indexOf('/api') > 0)
   credentials.url = credentials.url.substring(0, credentials.url.indexOf('/api'));
