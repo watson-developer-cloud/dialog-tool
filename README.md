@@ -71,6 +71,7 @@ For more information, including code snippets and references, see the full [Gett
      }]
     }
     }
+    ```
 
   2. Install [Node.js](http://nodejs.org/).
   3. Go to the project folder in a terminal and run the `npm install` command.
