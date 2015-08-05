@@ -4,7 +4,7 @@ declared-services:
     plan: free
 applications:
 - services:
-  - dialog-service-veta
+  - dialog-service-beta
   name: dialog-tool
   command: node app.js
   path: .

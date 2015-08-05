@@ -18,7 +18,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```none
     applications:
     - services:
-      - dialog-service
+      - dialog-service-beta
       name: <application-name>
       command: node app.js
       path: .
@@ -35,7 +35,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   5. Create the Dialog service in Bluemix by running the following command:
 
     ```sh
-    $ cf create-service watson_dialog_service experimental dialog-service
+    $ cf create-service dialog beta dialog-service-beta
     ```
 
   6. Push it live by running the following command:
@@ -44,7 +44,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     $ cf push
     ```
 
-For more information, including code snippets and references, see the full [Getting Started][getting_started] documentation.
+
 ## Running the tool locally
   The tool uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/), so you must download and install them as part of the following steps.
 
@@ -59,15 +59,15 @@ For more information, including code snippets and references, see the full [Gett
     System-Provided:
     {
     "VCAP_SERVICES": {
-      "watson_dialog_service": [{
+      "dialog": [{
           "credentials": {
             "url": "<url>",
             "password": "<password>",
             "username": "<username>"
           },
         "label": "dialog",
-        "name": "dialog-service",
-        "plan": "experimental"
+        "name": "dialog-service-beta",
+        "plan": "beta"
      }]
     }
     }
@@ -98,6 +98,6 @@ To troubleshoot your Bluemix app the main useful source of information are the l
   Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 
 [cloud_foundry]: https://github.com/cloudfoundry/cli
-[getting_started]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/getting_started/
+
 [sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
 [service_url]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/dialog/
