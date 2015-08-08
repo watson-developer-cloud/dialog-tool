@@ -1,6 +1,6 @@
 # Dialog Tool
 
-  The Dialog Tool enables you to edit and test the dialogs to be used with the IBM Watson [Dialog service][service_url].
+  The Dialog Tool enables you to create, manage, and interact with dialogs for the IBM Watson [Dialog service][service_url].
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
