@@ -1,7 +1,7 @@
 declared-services:
   dialog-service-beta:
     label: dialog
-    plan: free
+    plan: experimental
 applications:
 - services:
   - dialog-service-beta
