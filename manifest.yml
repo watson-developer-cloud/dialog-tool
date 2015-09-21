@@ -1,10 +1,10 @@
 declared-services:
-  dialog-service-beta:
+  dialog-service-standard:
     label: dialog
-    plan: experimental
+    plan: standard
 applications:
 - services:
-  - dialog-service-beta
+  - dialog-service-standard
   name: dialog-tool
   command: node app.js
   path: .
