@@ -13,7 +13,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
 
   2. Download and install the [Cloud-foundry CLI][cloud_foundry] tool.
 
-  3. Edit the `manifest.yml` file and replace `<application-name>` with a unique name for your copy of the tool. The name that you specify determines the tool's URL, such as `<application-name>.mybluemix.net`.
+  3. Edit the `manifest.yml` file and replace `<application-name>` with a unique name for your copy of the tool. The name that you specify determines the tool's URL, such as `<application-name>.mybluemix.net`. Do not use blank spaces in the name.
     
     ```none
     applications:
