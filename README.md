@@ -18,7 +18,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```none
     applications:
     - services:
-      - dialog-service-beta
+      - dialog-service
       name: <application-name>
       command: node app.js
       path: .
@@ -35,7 +35,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   5. Create the Dialog service in Bluemix by running the following command:
 
     ```sh
-    $ cf create-service dialog beta dialog-service-beta
+    $ cf create-service dialog stanard dialog-service
     ```
 
   6. Push it live by running the following command:
@@ -66,8 +66,8 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
             "username": "<username>"
           },
         "label": "dialog",
-        "name": "dialog-service-beta",
-        "plan": "beta"
+        "name": "dialog-service",
+        "plan": "standard"
      }]
     }
     }
