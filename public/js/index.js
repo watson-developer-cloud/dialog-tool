@@ -34,6 +34,19 @@ $(document).ready(function() {
   var $profile = $('.profile-container');
   var $userInput = $('.user-input');
 
+  var getErrorMessageFromResponse = function(response){
+    try{
+      if(!response.responseText) return ''
+      var errorObject = JSON.parse(response.responseText)
+      if(!errorObject.error) return ''
+      return errorObject.error
+    }catch(e){
+      if(e instanceof SyntaxError)
+        return ''
+      throw e
+    }
+  }
+
   /**
    * Loads the dialog-container
    */
@@ -50,9 +63,10 @@ $(document).ready(function() {
       dialogs.forEach(function(dialog, index) {
         createDialogTemplate(dialog, index).appendTo($dialogs);
        });
-    }).fail(function() {
+    }).fail(function(response) {
+      var errorText = getErrorMessageFromResponse(response)
       $dialogsError.show();
-      $dialogsError.find('.errorMsg').html('Error getting the dialogs.');
+      $dialogsError.find('.errorMsg').html('Error getting the dialogs' + (errorText?': '+errorText:'.'));
     })
     .always(function(){
       $dialogsLoading.hide();
@@ -158,9 +172,11 @@ $(document).ready(function() {
     .done(function(){
       setTimeout(getDialogs, 2000);
     })
-    .fail(function(){
+    .fail(function(e){
+      var errorText = getErrorMessageFromResponse(response)
       $dialogsError.show();
-      $dialogsError.find('.errorMsg').html('Error deleting the dialogs.');
+      $dialogsError.find('.errorMsg').html('Error deleting the dialogs' + (errorText?': '+errorText:'.'));
+      $dialogsError.find('.errorMsg').text('Error  the dialogs.');
       $dName.show();
     })
     .always(function(){
@@ -210,9 +226,10 @@ $(document).ready(function() {
       $('#file').replaceWith($('#file').val('').clone(true));
       getDialogs();
     })
-    .fail(function(){
+    .fail(function(response){
+      var errorText = getErrorMessageFromResponse(response)
       $dialogsError.show();
-      $dialogsError.find('.errorMsg').html('Error creating the dialogs.');
+      $dialogsError.find('.errorMsg').html('Error creating the dialogs' + (errorText?': '+errorText:'.'));
     })
     .always(function(){
       $('#new-dialog-loading').hide();
