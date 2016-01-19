@@ -35,7 +35,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   5. Create the Dialog service in Bluemix by running the following command:
 
     ```sh
-    $ cf create-service dialog stanard dialog-service
+    $ cf create-service dialog standard dialog-service
     ```
 
   6. Push it live by running the following command:
