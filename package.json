@@ -8,7 +8,7 @@
     "errorhandler": "~1.4.2",
     "express": "~4.13.3",
     "jade": "~1.11.0",
-    "request": "~2.71.0"
+    "request": "~2.72.0"
   },
   "engines": {
     "node": ">=0.10.38"
