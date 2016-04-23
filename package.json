@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Dialog app to create/edit dialog files",
   "dependencies": {
-    "http-auth": "~2.3.2",
+    "http-auth": "~2.3.3",
     "body-parser": "~1.14.1",
     "errorhandler": "~1.4.2",
     "express": "~4.13.3",
