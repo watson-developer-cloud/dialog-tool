@@ -16,11 +16,11 @@
 
 'use strict';
 
-var express  = require('express'),
-  app        = express(),
-  request    = require('request'),
-  bluemix    = require('./config/bluemix'),
-  extend     = require('util')._extend;
+var express  = require('express');
+var  app        = express();
+var  request    = require('request');
+var  vcapServices = require('vcap_services');
+var  extend     = require('util')._extend;
 
 // Bootstrap application settings
 require('./config/express')(app);
@@ -30,13 +30,15 @@ var credentials =  extend({
   url: 'https://gateway.watsonplatform.net/dialog/api',
   username: '<username>',
   password: '<password>'
-}, bluemix.getServiceCreds('dialog')); // VCAP_SERVICES
+}, vcapServices.getCredentials('dialog', 'standard')); // VCAP_SERVICES
 
-if (credentials.url.indexOf('/api') > 0)
-  credentials.url = credentials.url.substring(0, credentials.url.indexOf('/api'));
+var apiIndex = credentials.url.indexOf('/api');
+if (apiIndex > 0) {
+  credentials.url = credentials.url.substring(0, apiIndex);
+}
 
 // HTTP proxy to the API
-app.use('/proxy', function(req, res) {
+app.use('/proxy', function(req, res, next) {
   var newUrl = credentials.url + req.url;
   req.pipe(request({
     url: newUrl,
@@ -45,10 +47,7 @@ app.use('/proxy', function(req, res) {
       pass: credentials.password,
       sendImmediately: true
     }
-  }, function(error){
-    if (error)
-      res.status(500).json({code: 500, error: errorMessage});
-  })).pipe(res);
+  }, next)).pipe(res);
 });
 
 // render index page
@@ -56,28 +55,6 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.code = 404;
-  err.message = 'Not Found';
-  next(err);
-});
+require('./config/error-handler')(app);
 
-// 500 error message
-var errorMessage = 'There was a problem with the request, please try again';
-
-// non 404 error handler
-app.use(function(err, req, res, next) {
-  var error = {
-    code: err.code || 500,
-    error: err.message || err.error || errorMessage
-  };
-
-  console.log('error:', error);
-  res.status(error.code).json(error);
-});
-
-var port = process.env.VCAP_APP_PORT || 3000;
-app.listen(port);
-console.log('listening at:', port);
+module.exports = app;

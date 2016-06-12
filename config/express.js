@@ -18,18 +18,23 @@
 
 // Module dependencies
 var express    = require('express'),
-  errorhandler = require('errorhandler');
+  auth         = require('http-auth'),
+  pub          = require('pug');
+
+var basic = auth.basic({
+  realm: 'Dialog Admin'
+  }, function (username, password, callback) {
+    // Custom authentication method.
+    callback(username === process.env.AUTH_USERNAME && password === process.env.AUTH_PASSWORD);
+  }
+);
 
 module.exports = function (app) {
-
   // Setup static public directory
   app.use(express.static(__dirname + '/../public'));
-  app.set('view engine', 'jade');
+  app.set('view engine', 'pug');
   app.set('views', __dirname + '/../views');
 
-  // Add error handling in dev
-  if (!process.env.VCAP_SERVICES) {
-    app.use(errorhandler());
-  }
-
+  // add basic auth
+  app.use(auth.connect(basic));
 };

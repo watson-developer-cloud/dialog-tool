@@ -14,7 +14,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   2. Download and install the [Cloud-foundry CLI][cloud_foundry] tool.
 
   3. Edit the `manifest.yml` file and replace `<application-name>` with a unique name for your copy of the tool. The name that you specify determines the tool's URL, such as `<application-name>.mybluemix.net`. Do not use blank spaces in the name.
-    
+
     ```none
     applications:
     - services:
@@ -24,7 +24,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
       path: .
       memory: 128M
     ```
-    
+
   4. Connect to Bluemix by running the following commands in the command-line tool:
 
     ```sh
@@ -49,7 +49,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   The tool uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/), so you must download and install them as part of the following steps.
 
   1. Copy the `username`, `password`, and `url` credentials from your `dialog-service` service in Bluemix to `app.js`. To see the credentials, run the following command, where `<application-name>` is the unique name you specified:
-    
+
     ```sh
     $ cf env <application-name>
     ```
@@ -74,7 +74,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```
   2. Install [Node.js](http://nodejs.org/).
   3. Go to the project folder in a terminal and run the `npm install` command.
-  4. Start the application by running `node app.js`.
+  4. Start the application by running `npm start`.
   5. Open `http://localhost:3000` to see the running application.
 
 ## Troubleshooting
