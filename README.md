@@ -43,7 +43,12 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
     ```sh
     $ cf push
     ```
-
+  7. You can enable basic authorization by setting `AUTH_USERNAME` and `AUTH_PASSWORD`.
+  ```sh
+    $ cf se <app-name> AUTH_USERNAME <the-username-you-want-to-use>
+    $ cf se <app-name> AUTH_PASSWORD <the-password-you-want-to-use>
+    $ cf restage <app-name>
+    ```
 
 ## Running the tool locally
   The tool uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/), so you must download and install them as part of the following steps.
@@ -76,6 +81,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   3. Go to the project folder in a terminal and run the `npm install` command.
   4. Start the application by running `npm start`.
   5. Open `http://localhost:3000` to see the running application.
+
 
 ## Troubleshooting
 
