@@ -36,5 +36,7 @@ module.exports = function (app) {
   app.set('views', __dirname + '/../views');
 
   // add basic auth
-  app.use(auth.connect(basic));
+  if (process.env.AUTH_USERNAME && process.env.AUTH_PASSWORD) {
+    app.use(auth.connect(basic));
+  }
 };
