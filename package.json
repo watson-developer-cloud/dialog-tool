@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "description": "Dialog app to create/edit dialog files",
   "dependencies": {
-    "express": "~4.13.4",
+    "express": "~4.14.0",
     "http-auth": "~2.4.0",
     "pug": "^2.0.0-beta3",
     "request": "~2.72.0",
