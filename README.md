@@ -104,6 +104,6 @@ To troubleshoot your Bluemix app the main useful source of information are the l
   Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 
 
-[cloud_foundry]: https://github.com/cloudfoundry/cli
-[sign_up]: https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI
-[service_url]: http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/dialog/
+[cloud_foundry](https://github.com/cloudfoundry/cli)
+[sign_up](https://apps.admin.ibmcloud.com/manage/trial/bluemix.html?cm_mmc=WatsonDeveloperCloud-_-LandingSiteGetStarted-_-x-_-CreateAnAccountOnBluemixCLI)
+[service_url](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/dialog/)
