@@ -6,7 +6,7 @@
     "express": "~4.14.0",
     "http-auth": "~2.4.0",
     "pug": "^2.0.0-beta3",
-    "request": "~2.74.0",
+    "request": "~2.75.0",
     "vcap_services": "^0.2.0"
   },
   "devDependencies": {
