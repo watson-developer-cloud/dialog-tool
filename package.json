@@ -10,7 +10,7 @@
     "vcap_services": "^0.2.0"
   },
   "devDependencies": {
-    "codecov": "^1.0.1",
+    "codecov": "^2.0.2",
     "istanbul": "^0.4.2",
     "jshint": "^2.9.1",
     "mocha": "^3.0.0",
