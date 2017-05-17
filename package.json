@@ -4,7 +4,7 @@
   "description": "Dialog app to create/edit dialog files",
   "dependencies": {
     "express": "~4.15.3",
-    "http-auth": "~2.4.0",
+    "http-auth": "~2.5.10",
     "pug": "^2.0.0-beta3",
     "request": "~2.81.0",
     "vcap_services": "^0.2.0"
