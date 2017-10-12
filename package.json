@@ -7,7 +7,7 @@
     "http-auth": "~2.4.0",
     "pug": "^2.0.0-beta3",
     "request": "~2.81.0",
-    "vcap_services": "^0.2.0"
+    "vcap_services": "^0.3.4"
   },
   "devDependencies": {
     "codecov": "^1.0.1",
